@@ -1,4 +1,4 @@
-FROM baseimage:0.9.19
+FROM phusion/baseimage:0.9.19
 MAINTAINER R0GGER
 
 ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
