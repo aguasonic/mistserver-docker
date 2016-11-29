@@ -3,7 +3,7 @@ MAINTAINER R0GGER
 
 ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
 ENV PATH /app/mistserver:$PATH
-ENV MISTSERVER=https://r.mistserver.org/dl/mistserver_64V2.7.tar.gz
+ENV MISTSERVER=r.mistserver.org/dl/mistserver_64V2.8.2.tar.gz
 ENV DOMAIN=0.0.0.0
 CMD ["/sbin/my_init"]
 
