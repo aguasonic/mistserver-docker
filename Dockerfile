@@ -15,7 +15,7 @@ ADD add_user_mist.sh /etc/my_init.d/add_user_mist.sh
 
 # install basics
 RUN apt-get update
-RUN apt-get install git wget -yq
+RUN apt-get install git wget nano -yq
 RUN chmod +x /etc/my_init.d/*.sh
 RUN mkdir -p /app/mistserver /config /media
 
