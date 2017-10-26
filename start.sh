@@ -1,2 +1,2 @@
-#!/bin/bash
-/sbin/setuser mist MistController -i ${DOMAIN} -c /config/server.conf
+#!/bin/sh
+echo "n" | MistController -c /config/server.conf
