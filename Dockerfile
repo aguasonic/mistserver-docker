@@ -2,7 +2,7 @@ FROM phusion/baseimage:latest
 MAINTAINER R0GGER
 
 ENV PATH /app/mistserver:$PATH
-ENV MISTSERVER=https://r.mistserver.org/dl/mistserver_64V2.12.tar.gz
+ARG MISTSERVER=https://r.mistserver.org/dl/mistserver_64V2.12.tar.gz
 
 CMD ["/sbin/my_init"]
 
