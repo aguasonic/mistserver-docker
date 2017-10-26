@@ -2,7 +2,7 @@
 
 MistServer is a streaming media server that works well in any streaming environment even on a Raspberry Pi! It bridges the gap between dedicated media servers and web servers, performing the best of both worlds when it comes to media streaming delivery.
 
-The opensource version works best with HLS live streaming (gaming) with programs such as Open Broadcaster Software (OBS), FFsplit or Xsplit! If you want more options such as VOD, buy a pro-license.
+The opensource version works best with HLS live streaming (gaming) with programs such as Open Broadcaster Software (OBS) or Xsplit! If you want more options such as VOD, buy a pro-license.
 
 **What makes this docker build better as the official one from DDTECH/MistServer?**   
 It's more secure and because on `docker stop` it will gracefully shutdown your processes. It prevents data corruption and all config-files will be saved before shutting down.
@@ -27,8 +27,6 @@ r0gger/mistserver
 `-v /etc/localhost:ro` - for timesync (read-only) - *optional*   
 `-v /config` - config and log files  
 `-v /media` - video and audio files 
-`-e PGID` for for GroupID
-`-e PUID` for for UserID
 
 Build & run Free version
 -----------
@@ -59,9 +57,9 @@ Embed within website
 <video id=autoplay width="720" height="360" class="video-js vjs-default-skin vjs-big-play-centered" controls>
   <source src="http://mydomain.tld:8080/hls/stream_name.m3u8" type="application/x-mpegURL">
 </video>
-<link href="//vjs.zencdn.net/5.7.1/video-js.css" rel="stylesheet">
-<script src="//vjs.zencdn.net/5.7.1/video.js"></script>
-<script src="//videojs.github.io/videojs-contrib-hls/node_modules/videojs-contrib-hls/dist/videojs.hls.min.js"></script>
+<link href="//vjs.zencdn.net/6.2.8/video-js.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/6.2.8/video.js"></script>
+<script src="//github.com/videojs/videojs-contrib-hls/releases/download/v5.12.1/videojs-contrib-hls.min.js"></script>
 <script>
 var player = videojs('autoplay');
 player.play();
