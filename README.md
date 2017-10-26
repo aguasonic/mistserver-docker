@@ -7,7 +7,7 @@ The opensource version works best with HLS live streaming (gaming) with programs
 **What makes this docker build better as the official one from DDTECH/MistServer?**   
 It's more secure and because on `docker stop` it will gracefully shutdown your processes. It prevents data corruption and all config-files will be saved before shutting down.
 
-Usage
+Usage 
 -----------
 ```
 docker create --name=mistserver \   
@@ -18,7 +18,17 @@ docker create --name=mistserver \
 -p 554:554 -p 8080:8080 \   
 r0gger/mistserver   
 ```
-    
+**or use:**   
+```
+docker create --name=mistserver \   
+-v /etc/localtime:/etc/localtime:ro \   
+-v <path to config>:/config \   
+-v <path to video>:/media \   
+--net=host \   
+r0gger/mistserver   
+```
+
+
 **Parameters**    
 `-p 4242` - Web UI  
 `-p 1935` - RTMP  
@@ -59,7 +69,7 @@ Embed within website
 </video>
 <link href="//vjs.zencdn.net/6.2.8/video-js.css" rel="stylesheet">
 <script src="//vjs.zencdn.net/6.2.8/video.js"></script>
-<script src="//github.com/videojs/videojs-contrib-hls/releases/download/v5.12.1/videojs-contrib-hls.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.12.1/videojs-contrib-hls.min.js"></script>
 <script>
 var player = videojs('autoplay');
 player.play();
