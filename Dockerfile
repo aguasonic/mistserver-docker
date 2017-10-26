@@ -2,13 +2,13 @@ FROM phusion/baseimage:latest
 MAINTAINER R0GGER
 
 ENV PATH /app/mistserver:$PATH
-ARG MISTSERVER=https://r.mistserver.org/dl/mistserver_64V2.12.tar.gz
+ENV MISTSERVER=https://r.mistserver.org/dl/mistserver_64V2.12.tar.gz
 
 CMD ["/sbin/my_init"]
 
 # install basics
 RUN apt-get update
-RUN apt-get install wget -yq
+RUN apt-get install wget nano -yq
 RUN mkdir -p /app/mistserver /config /media
 ADD start.sh /etc/my_init.d/start.sh
 RUN chmod +x /etc/my_init.d/*.sh
