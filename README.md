@@ -17,8 +17,9 @@ docker create --name=mistserver \
 -p 4242:4242 -p 1935:1935 \   
 -p 554:554 -p 8080:8080 \   
 r0gger/mistserver   
-```
+```   
 **or use:**   
+   
 ```
 docker create --name=mistserver \   
 -v /etc/localtime:/etc/localtime:ro \   
@@ -26,8 +27,8 @@ docker create --name=mistserver \
 -v <path to video>:/media \   
 --net=host \   
 r0gger/mistserver   
-```
-
+```   
+    
 
 **Parameters**    
 `-p 4242` - Web UI  
@@ -67,9 +68,9 @@ Embed within website
 <video id=autoplay width="720" height="360" class="video-js vjs-default-skin vjs-big-play-centered" controls>
   <source src="http://mydomain.tld:8080/hls/stream_name.m3u8" type="application/x-mpegURL">
 </video>
-<link href="//vjs.zencdn.net/6.2.8/video-js.css" rel="stylesheet">
-<script src="//vjs.zencdn.net/6.2.8/video.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.12.1/videojs-contrib-hls.min.js"></script>
+<link href="https://vjs.zencdn.net/6.2.8/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/6.2.8/video.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.12.1/videojs-contrib-hls.min.js"></script>
 <script>
 var player = videojs('autoplay');
 player.play();
