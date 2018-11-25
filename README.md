@@ -11,16 +11,14 @@ Usage
 -----------
 ```
 docker create --name=mistserver \   
--v /etc/localtime:/etc/localtime:ro \   
+--net=host \    
 -v <path to config>:/config \   
--v <path to video>:/media \   
---net=host \   
+-v <path to video>:/media \     
 r0gger/mistserver   
 ```   
 
 **Parameters**    
 * `--net=host` - Recommended! You can change ports within Mistserver Protocols.
-* `-v /etc/localhost:ro` - for timesync (read-only) - *optional*   
 * `-v /config` - config and log files  
 * `-v /media` - video and audio files  
 
@@ -30,21 +28,21 @@ r0gger/mistserver
 * `-p 1935` - RTMP  
 * `-p 554` - RTSP   
 * `-p 8080` - HTTP / HLS 
+* `-v /etc/localhost:ro` - for timesync (read-only)   
 
-Build & run Free version
+Run
 -----------
-1. Build: `docker build -t mistserver .`   
-2. Run container:    
-`docker run -d --net=host -v /my-folder:/config -v /my-folder/video:/media /etc/localtime:/etc/localtime:ro --name mistserver mistserver:latest /sbin/my_init`   
-3. Login to http://mydomain.tld:4242 and enter a username/password.   
-4. Click on "Enable protocols".
-5. Enter a "Human readable name" and set a thick to "Force JSON file save".   
+1. Run container:    
+`docker run -d --net=host --name mistserver -v /my-folder:/config -v /my-folder/video:/media mistserver:latest`   
+2. Login to http://mydomain.tld:4242 and enter a username/password.   
+3. Click on "Enable protocols" and change ports if necessary.
+4. Enter a "Human readable name" and set a thick to "Force JSON file save".   
 
 Build Pro version
 -----------
 1. `git clone https://github.com/R0GGER/mistserver.git mistserver-pro`
 2. `nano Dockerfile`
-3. `ENV MISTSERVER=http://url-to-pro-version`.
+3. `ENV MISTSERVER=https://url-to-pro-version`.
 4. `docker build -t mistserver-pro .`
 
 Setup live streaming with RTMP
