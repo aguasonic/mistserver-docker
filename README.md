@@ -32,18 +32,9 @@ r0gger/mistserver
 
 Run
 -----------
-1. Run container:    
-`docker run -d --net=host --name mistserver -v /my-folder:/config -v /my-folder/video:/media r0gger/mistserver`   
-2. Login to http://mydomain.tld:4242 and enter a username/password.   
-3. Click on "Enable protocols" and change ports if necessary.
-4. Enter a "Human readable name" and set a thick to "Force JSON file save".   
-
-Build Pro version
------------
-1. `git clone https://github.com/R0GGER/mistserver.git mistserver-pro`
-2. `nano Dockerfile`
-3. `ENV MISTSERVER=https://url-to-pro-version`.
-4. `docker build -t mistserver-pro .`
+1. Webui: http://mydomain.tld:4242 and enter a username/password.   
+2. Click on "Enable protocols" and change ports if necessary.
+3. Enter a "Human readable name" and set a thick to "Force JSON file save".   
 
 Setup live streaming with RTMP
 -----------
@@ -65,7 +56,14 @@ Embed within website
 var player = videojs('autoplay');
 player.play();
 </script>
-```
+```    
+Build Pro version
+-----------
+1. `git clone https://github.com/R0GGER/mistserver.git mistserver-pro`
+2. `nano Dockerfile`
+3. `ENV MISTSERVER=https://url-to-pro-version`.
+4. `docker build -t mistserver-pro .`
+
 Links
 -----------
 Website: http://mistserver.org   
