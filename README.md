@@ -33,7 +33,7 @@ r0gger/mistserver
 Run
 -----------
 1. Run container:    
-`docker run -d --net=host --name mistserver -v /my-folder:/config -v /my-folder/video:/media mistserver:latest`   
+`docker run -d --net=host --name mistserver -v /my-folder:/config -v /my-folder/video:/media r0gger/mistserver`   
 2. Login to http://mydomain.tld:4242 and enter a username/password.   
 3. Click on "Enable protocols" and change ports if necessary.
 4. Enter a "Human readable name" and set a thick to "Force JSON file save".   
