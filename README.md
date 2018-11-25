@@ -14,36 +14,28 @@ docker create --name=mistserver \
 -v /etc/localtime:/etc/localtime:ro \   
 -v <path to config>:/config \   
 -v <path to video>:/media \   
--p 4242:4242 -p 1935:1935 \   
--p 554:554 -p 8080:8080 \   
-r0gger/mistserver   
-```   
-**or use:**   
-   
-```
-docker create --name=mistserver \   
--v /etc/localtime:/etc/localtime:ro \   
--v <path to config>:/config \   
--v <path to video>:/media \   
 --net=host \   
 r0gger/mistserver   
 ```   
-    
 
 **Parameters**    
-`-p 4242` - Web UI  
-`-p 1935` - RTMP  
-`-p 554` - RTSP   
-`-p 8080` - HTTP / HLS   
-`-v /etc/localhost:ro` - for timesync (read-only) - *optional*   
-`-v /config` - config and log files  
-`-v /media` - video and audio files 
+* `--net=host` - Recommended! You can change ports within Mistserver Protocols.
+* `-v /etc/localhost:ro` - for timesync (read-only) - *optional*   
+* `-v /config` - config and log files  
+* `-v /media` - video and audio files  
+
+*Special note* - If you'd like to run Mistserver without requiring `--net=host` (`NOT recommended`) then you will need the following ports in your `docker create` command:
+
+* `-p 4242` - Web UI  
+* `-p 1935` - RTMP  
+* `-p 554` - RTSP   
+* `-p 8080` - HTTP / HLS 
 
 Build & run Free version
 -----------
 1. Build: `docker build -t mistserver .`   
 2. Run container:    
-`docker run -i -t -p 1935:1935 -p 4242:4242 -p 554:554 -p 8080:8080 -v /my-folder:/config -v /my-folder/video:/media /etc/localtime:/etc/localtime:ro --name mistserver mistserver:latest /sbin/my_init`   
+`docker run -d --net=host -v /my-folder:/config -v /my-folder/video:/media /etc/localtime:/etc/localtime:ro --name mistserver mistserver:latest /sbin/my_init`   
 3. Login to http://mydomain.tld:4242 and enter a username/password.   
 4. Click on "Enable protocols".
 5. Enter a "Human readable name" and set a thick to "Force JSON file save".   
@@ -68,9 +60,9 @@ Embed within website
 <video id=autoplay width="720" height="360" class="video-js vjs-default-skin vjs-big-play-centered" controls>
   <source src="http://mydomain.tld:8080/hls/stream_name.m3u8" type="application/x-mpegURL">
 </video>
-<link href="https://vjs.zencdn.net/6.2.8/video-js.css" rel="stylesheet">
-<script src="https://vjs.zencdn.net/6.2.8/video.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.12.1/videojs-contrib-hls.min.js"></script>
+<link href="https://vjs.zencdn.net/7.3.0/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.min.js"></script>
 <script>
 var player = videojs('autoplay');
 player.play();
