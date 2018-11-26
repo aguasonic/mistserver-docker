@@ -16,7 +16,7 @@ docker create --name=mistserver \
 -v <path to video>:/media \     
 r0gger/mistserver   
 ```   
-
+  
 **Parameters**    
 * `--net=host` - Recommended! You can change ports within Mistserver Protocols.
 * `-v /config` - config and log files  
