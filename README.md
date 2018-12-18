@@ -51,7 +51,6 @@ Embed within website
 </video>
 <link href="https://vjs.zencdn.net/7.3.0/video-js.css" rel="stylesheet">
 <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.min.js"></script>
 <script>
 var player = videojs('autoplay');
 player.play();
