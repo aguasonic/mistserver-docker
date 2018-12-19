@@ -19,8 +19,8 @@ r0gger/mistserver
   
 **Parameters**    
 * `--net=host` - Recommended! You can change ports within Mistserver Protocols.
-* `-v /config` - config and log files  
-* `-v /media` - video and audio files  
+* `-v <path to config>:/config` - config and log files  
+* `<path to video>:/media` - video and audio files  
 
 *Special note* - If you'd like to run Mistserver without requiring `--net=host` (`NOT recommended`) then you will need the following ports in your `docker create` command:
 
@@ -30,11 +30,11 @@ r0gger/mistserver
 * `-p 8080` - HTTP / HLS 
 * `-v /etc/localhost:ro` - for timesync (read-only)   
 
-Run
+Webinterface (first run --> step 2 and 3)
 -----------
 1. Webui: http://mydomain.tld:4242 and enter a username/password.   
 2. Click on "Enable protocols" and change ports if necessary.
-3. Enter a "Human readable name" and set a thick to "Force JSON file save".   
+3. Enter a "Human readable name" and thick "Force JSON file save".   
 
 Setup live streaming with RTMP
 -----------
@@ -67,5 +67,4 @@ Links
 -----------
 Website: http://mistserver.org   
 Github: https://github.com/DDVTECH/mistserver   
-Video.js HLS plugin: https://github.com/videojs/videojs-contrib-hls/releases
 
