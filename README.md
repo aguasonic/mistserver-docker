@@ -20,7 +20,7 @@ r0gger/mistserver
 **Parameters**    
 * `--net=host` - Recommended! You can change ports within Mistserver Protocols.
 * `-v <path to config>:/config` - config and log files  
-* `<path to video>:/media` - video and audio files  
+* `-v <path to video>:/media` - video and audio files  
 
 *Special note* - If you'd like to run Mistserver without requiring `--net=host` (`NOT recommended`) then you will need the following ports in your `docker create` command:
 
