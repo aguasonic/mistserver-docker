@@ -1,0 +1,24 @@
+FROM arm32v7/debian:jessie-slim
+MAINTAINER R0GGER
+
+ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
+ENV PATH /app/mistserver:$PATH
+ARG MISTSERVER=https://r.mistserver.org/dl/mistserver_armv7V2.16.tar.gz
+
+# install basics
+RUN apt-get update
+RUN apt-get install wget -yq
+RUN mkdir -p /app/mistserver /config /media
+
+# install mistserver
+RUN wget -qO- ${MISTSERVER} | tar xvz -C /app/mistserver
+
+# clean up
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+VOLUME /config /media
+EXPOSE 4242 8080 1935 554
+CMD ["/bin/bash", "-c", "echo 'n' | /usr/bin/MistController -c /config/server.conf"]
+
+# docker run -d --restart=always --net=host -v <path to video>:/media --name r0gger/mistserver 
