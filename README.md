@@ -2,7 +2,7 @@
 
 MistServer is a streaming media server that works well in any streaming environment even on a Raspberry Pi! It bridges the gap between dedicated media servers and web servers, performing the best of both worlds when it comes to media streaming delivery.
 
-The opensource version works best with HLS live streaming (gaming) with programs such as Open Broadcaster Software (OBS) or Xsplit! If you want more options such as VOD, buy a pro-license.
+The opensource version works best with HLS live streaming (gaming) and Open Broadcaster Software (OBS)! If you want more options such as VOD, buy a pro-license.
 
 **What makes this docker build better as the official one from DDTECH/MistServer?**   
 It's more secure and because on `docker stop` it will gracefully shutdown your processes. It prevents data corruption and all config-files will be saved before shutting down.
@@ -49,19 +49,19 @@ Embed within website
 <video id=autoplay width="720" height="360" class="video-js vjs-default-skin vjs-big-play-centered" controls>
   <source src="http://mydomain.tld:8080/hls/stream_name.m3u8" type="application/x-mpegURL">
 </video>
-<link href="https://vjs.zencdn.net/7.3.0/video-js.css" rel="stylesheet">
-<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+<link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 <script>
 var player = videojs('autoplay');
 player.play();
 </script>
 ```    
-Build Pro version
+Build newer free or pro version
 -----------
-1. `git clone https://github.com/R0GGER/mistserver.git mistserver-pro`
-2. `nano Dockerfile`
-3. `ENV MISTSERVER=https://url-to-pro-version`.
-4. `docker build -t mistserver-pro .`
+1. `git clone https://github.com/R0GGER/mistserver.git mistserver`
+2. `cd mistserver/`
+3. `docker build -t mistserver --build-arg MISTSERVER=https://r.mistserver.org/dl/mistserver_[version].tar.gz .`.
+
 
 Links
 -----------
