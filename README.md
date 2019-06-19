@@ -60,12 +60,8 @@ Build newer free or pro version
 -----------
 1. `git clone https://github.com/R0GGER/mistserver.git mistserver`
 2. `cd mistserver/`
-
-3. Intel:   
-`docker build -t mistserver --build-arg MISTSERVER=https://r.mistserver.org/dl/mistserver_[version].tar.gz .`
- 
-3. ARM:   
-`docker build -t mistserver --build-arg MISTSERVER=https://r.mistserver.org/dl/mistserver_[version].tar.gz -f Dockerfile.arm .`   
+3. `docker build -t mistserver --build-arg MISTSERVER=https://r.mistserver.org/dl/mistserver_[version].tar.gz .`
+   
 
 Links
 -----------
