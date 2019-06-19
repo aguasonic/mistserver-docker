@@ -21,4 +21,4 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 VOLUME /config /media
 EXPOSE 4242 8080 1935 554
 
-# docker run -d --restart=always --net=host -v <path to video>:/media --name r0gger/mistserver 
+# docker run -d --name mistserver --restart=always --net=host -v <path to video>:/media r0gger/mistserver 
