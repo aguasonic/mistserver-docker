@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.11
+FROM phusion/baseimage:latest
 MAINTAINER R0GGER
 
 ENV PATH /app/mistserver:$PATH
