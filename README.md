@@ -10,7 +10,7 @@ It's more secure and because on `docker stop` it will gracefully shutdown your p
 Usage 
 -----------
 ```
-docker run -d ---restart always --name=mistserver \   
+docker run -d --restart always --name=mistserver \   
 --net=host \    
 -v <path to config>:/config \   
 -v <path to video>:/media \     
