@@ -31,15 +31,16 @@ r0gger/mistserver
 * `-p 8080` - HTTP / HLS 
 * `-v /etc/localhost:ro` - for timesync (read-only)   
 
-Webinterface
------------
+### Webinterface
 1. Webui: http://mydomain.tld:4242 and enter a username/password.   
 2. Click on "Enable protocols" and change ports if necessary.
-3. Enter a "Human readable name" and thick "Force JSON file save".   
+3. Enter a "Human readable name" and thick "Force JSON file save". 
 
+### Wiki
+- [Manual & Changelog](https://github.com/R0GGER/mistserver/wiki/MistServer-Manual,-Changelog-&-Tutorials#manual--changelog)
+- [Tutorials](https://github.com/R0GGER/mistserver/wiki/MistServer-Manual,-Changelog-&-Tutorials#tutorials)
 
-Links
------------
+### Links
 Website: http://mistserver.org   
 Github: https://github.com/DDVTECH/mistserver   
 
