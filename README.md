@@ -8,8 +8,7 @@ Mistserver 3.0 has all now all Pro features, more info [here](https://news.mists
 **What makes this docker build better as the official one from DDTECH/MistServer?**   
 It's more secure and because on `docker stop` it will gracefully shutdown your processes. It prevents data corruption and all config-files will be saved before shutting down.
 
-Usage 
------------
+# Usage 
 ```
 docker run -d --restart always --name=mistserver \   
 --net=host \    
