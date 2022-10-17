@@ -6,7 +6,7 @@ MistServer is a streaming media server that works well in any streaming environm
 Mistserver 3.0 has all now all Pro features, more info [here](https://news.mistserver.org/news/108/Release+notes+summary+3.0) and [changelog](https://releases.mistserver.org/changelog).
 
 **What makes this docker build better as the official one from DDTECH/MistServer?**   
-It's more secure and because on `docker stop` it will gracefully shutdown your processes. It prevents data corruption and all config-files will be saved before shutting down.
+It's more secure and because `docker stop` will gracefully shutdown your processes, it prevents data corruption and all config-files will be saved before shutting down.
 
 # Usage 
 ```
