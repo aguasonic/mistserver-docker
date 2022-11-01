@@ -1,4 +1,3 @@
-
 FROM phusion/baseimage:master
 
 MAINTAINER aguasonic@gmail.com
@@ -19,11 +18,15 @@ ARG INVOKED_TIMESTAMP
 ENV BUILD_DATE $INVOKED_TIMESTAMP
 ENV PATH /app/mistserver:$PATH
 
-ARG MISTSERVER=https://r.mistserver.org/dl/mistserver_64V3.1.tar.gz
+#- The official release -- but no support for RIST.
+# ARG MISTSERVER=https://r.mistserver.org/dl/mistserver_64V3.1.tar.gz
+ARG MISTSERVER=https://aguasonic.com/files/NjYTSAcG5Dpnxzm3wyBRLQi9/mist_binaries.tar.gz
 
 # Install basics.
 RUN apt update
-RUN apt install wget2 -yq
+RUN apt --fix-missing --fix-broken install
+RUN apt -y upgrade
+RUN apt -y install wget2
 RUN mkdir -p /app/mistserver /config /media
 ADD service/ /etc/service/
 RUN chmod -v +x /etc/service/*/run
